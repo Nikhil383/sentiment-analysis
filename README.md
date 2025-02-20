@@ -37,55 +37,56 @@ sentiment_analysis_project/
 4. **Run the application**
    
 ## Usage
-Input Text: On the home page (/), enter some text in the provided textarea (e.g., "I love this app!" or "This is terrible.").
-Analyze: Click the "Analyze" button to submit the text.
-View Results: The result page will display:
+1. Input Text: On the home page (/), enter some text in the provided   textarea (e.g., "I love this app!" or "This is terrible.").
+
+2. Analyze: Click the "Analyze" button to submit the text.
+3. View Results: The result page will display:
 The original text.
 The predicted sentiment (Positive, Neutral, or Negative).
 The confidence score as a percentage.
-Try Again: Click "Analyze another text" to return to the home page.
+4. Try Again: Click "Analyze another text" to return to the home page.
 
 
 
 ## Example Outputs
-Input: "I love this app!"
+1. Input: "I love this app!"
 Sentiment: Positive
 Confidence: ~98%
-Input: "This is terrible."
+2. Input: "This is terrible."
 Sentiment: Negative
 Confidence: 95%
 
 
 ## Model Details
-Model: cardiffnlp/twitter-roberta-base-sentiment
-Source: Hugging Face Transformers
-Architecture: RoBERTa (Robustly optimized BERT approach)
-Training Data: Fine-tuned on Twitter data for three-class sentiment classification (Positive, Neutral, Negative).
+1. Model: cardiffnlp/twitter-roberta-base-sentiment
+2. Source: Hugging Face Transformers
+3. Architecture: RoBERTa (Robustly optimized BERT approach)
+4. Training Data: Fine-tuned on Twitter data for three-class sentiment 
+classification (Positive, Neutral, Negative).
 
 
 ## Customization
-Change Model: Modify the sentiment_analyzer line in app.py to use a different Hugging Face model (e.g., distilbert-base-uncased-finetuned-sst-2-english for binary classification).
-Enhance UI: Edit static/style.css or use a framework like Bootstrap for a more polished look.
-Add Features: Implement error handling or color-coded sentiments (see "Future Improvements").
+1. Change Model: Modify the sentiment_analyzer line in app.py to use a different Hugging Face model (e.g., distilbert-base-uncased-finetuned-sst-2-english for binary classification).
+2. Enhance UI: Edit static/style.css or use a framework like Bootstrap for a more polished look.
+3. Add Features: Implement error handling or color-coded sentiments (see "Future Improvements").
 
 
 ## Future Improvements
-Add color coding for sentiments (e.g., green for Positive, red for Negative).
-Deploy the app online using Heroku, Render, or another hosting service.
-Include input validation and error handling for robustness.
-Support multi-language sentiment analysis by switching to a multilingual model.
+1. Add color coding for sentiments (e.g., green for Positive, red for Negative).
+2. Deploy the app online using Heroku, Render, or another hosting service.
+3. Include input validation and error handling for robustness.
+4. Support multi-language sentiment analysis by switching to a multilingual model.
 
 
 ## Troubleshooting
-ModuleNotFoundError: Ensure all dependencies (flask, transformers, torch) are installed.
-Port Conflict: If 5000 is in use, change the port in app.py by adding app.run(debug=True, port=5001).
-Model Download Issues: Ensure an active internet connection the first time you run the app, as the model is downloaded automatically.
-
+1. ModuleNotFoundError: Ensure all dependencies (flask, transformers, torch) are installed.
+2. Port Conflict: If 5000 is in use, change the port in app.py by adding app.run(debug=True, port=5001).
+3. Model Download Issues: Ensure an active internet connection the first time you run the app, as the model is downloaded automatically.
 
 
 ## License
 This project is open-source and available under the MIT License.
 
 ## Acknowledgments
-Hugging Face for providing pre-trained models and the Transformers library.
-Flask for the lightweight web framework.
+1. Hugging Face for providing pre-trained models and the Transformers library.
+2. Flask for the lightweight web framework.
