@@ -27,14 +27,12 @@ sentiment_analysis_project/
 
 ## Setup Instructions
 1. **Clone the Repository** (or create the project locally):
-   git clone <repository-url>
+   git clone https://github.com/Nikhil383/sentiment-analysis.git
    cd sentiment_analysis_project
-2. **Clone the Repository** (or create the project locally):
-   git clone <repository-url>
-   cd sentiment_analysis_project
-3. **Install Dependencies**
-   pip install flask transformers torch
-4. **Run the application**
+2. **Install Dependencies**
+   pip install -r requirements.txt
+3. **Run the application**
+   py app.py
    
 ## Usage
 1. Input Text: On the home page (/), enter some text in the provided   textarea (e.g., "I love this app!" or "This is terrible.").
