@@ -28,7 +28,6 @@ sentiment_analysis_project/
 ## Setup Instructions
 1. **Clone the Repository** (or create the project locally):
    git clone https://github.com/Nikhil383/sentiment-analysis.git
-   cd sentiment_analysis_project
 2. **Install Dependencies**
    pip install -r requirements.txt
 3. **Run the application**
