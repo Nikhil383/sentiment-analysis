@@ -1,4 +1,4 @@
-# Sentiment Analysis Web App
+# Sentiment Analysis 
 
 This is an end-to-end machine learning project that performs sentiment analysis on user-provided text. The application uses a pre-trained model from Hugging Face (`cardiffnlp/twitter-roberta-base-sentiment`) and is built with Flask to provide a simple web interface. Users can input text, and the app will classify the sentiment as **Positive**, **Neutral**, or **Negative**, displaying the result along with a confidence score.
 
