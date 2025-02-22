@@ -7,19 +7,7 @@ This is an end-to-end machine learning project that performs sentiment analysis 
 - **Web Interface**: Built with Flask, featuring a clean and user-friendly UI.
 - **Pre-trained Model**: Utilizes `cardiffnlp/twitter-roberta-base-sentiment` from Hugging Face, fine-tuned on Twitter data.
 - **Confidence Scores**: Displays the model's confidence in its prediction.
-
-## Project Structure
-
-sentiment_analysis_project/
-├── app.py                # Flask application and sentiment analysis logic
-├── templates/
-│   ├── index.html       # Home page with input form
-│   └── result.html      # Result page displaying sentiment
-├── static/
-│   └── style.css        # Basic CSS for styling
-└── README.md            # Project documentation
-
-
+            
 
 ## Prerequisites
 - Python 3.7 or higher
