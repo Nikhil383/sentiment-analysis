@@ -24,7 +24,7 @@ def analyze():
         # Map the label to a user-friendly sentiment
         if label == "LABEL_0":
             sentiment = "Negative"
-        elif label == "LABEL_1":
+        elif label == "LABEL_1": #LABEL_1
             sentiment = "Neutral"
         else:  # LABEL_2
             sentiment = "Positive"
