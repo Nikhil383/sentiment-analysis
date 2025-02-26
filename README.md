@@ -1,4 +1,4 @@
-# Sentiment Analysis Web App
+# Sentiment Analysis 
 
 This is an end-to-end machine learning project that performs sentiment analysis on user-provided text. The application uses a pre-trained model from Hugging Face (`cardiffnlp/twitter-roberta-base-sentiment`) and is built with Flask to provide a simple web interface. Users can input text, and the app will classify the sentiment as **Positive**, **Neutral**, or **Negative**, displaying the result along with a confidence score.
 
@@ -7,19 +7,7 @@ This is an end-to-end machine learning project that performs sentiment analysis 
 - **Web Interface**: Built with Flask, featuring a clean and user-friendly UI.
 - **Pre-trained Model**: Utilizes `cardiffnlp/twitter-roberta-base-sentiment` from Hugging Face, fine-tuned on Twitter data.
 - **Confidence Scores**: Displays the model's confidence in its prediction.
-
-## Project Structure
-
-sentiment_analysis_project/
-├── app.py                # Flask application and sentiment analysis logic
-├── templates/
-│   ├── index.html       # Home page with input form
-│   └── result.html      # Result page displaying sentiment
-├── static/
-│   └── style.css        # Basic CSS for styling
-└── README.md            # Project documentation
-
-
+            
 
 ## Prerequisites
 - Python 3.7 or higher
@@ -27,14 +15,11 @@ sentiment_analysis_project/
 
 ## Setup Instructions
 1. **Clone the Repository** (or create the project locally):
-   git clone <repository-url>
-   cd sentiment_analysis_project
-2. **Clone the Repository** (or create the project locally):
-   git clone <repository-url>
-   cd sentiment_analysis_project
-3. **Install Dependencies**
-   pip install flask transformers torch
-4. **Run the application**
+   git clone https://github.com/Nikhil383/sentiment-analysis.git
+2. **Install Dependencies**
+   pip install -r requirements.txt
+3. **Run the application**
+   py app.py
    
 ## Usage
 1. Input Text: On the home page (/), enter some text in the provided   textarea (e.g., "I love this app!" or "This is terrible.").
