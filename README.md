@@ -36,7 +36,7 @@ The confidence score as a percentage.
 ## Example Outputs
 1. Input: "I love this app!"
 Sentiment: Positive
-Confidence: ~98%
+Confidence: 98%
 2. Input: "This is terrible."
 Sentiment: Negative
 Confidence: 95%
