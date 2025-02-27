@@ -49,7 +49,7 @@ Confidence: 95%
 4. Training Data: Fine-tuned on Twitter data for three-class sentiment 
 classification (Positive, Neutral, Negative).
 
-##Results
+## Results
 1. Postive case
 ![Sample1](https://github.com/user-attachments/assets/cc9f198f-70c2-44c5-9193-7e30a1580195)
 ![Sample1(Result)](https://github.com/user-attachments/assets/0286a471-5071-4f6a-aa4b-775e0dd1265c)
