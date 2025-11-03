@@ -1,4 +1,3 @@
-```markdown
 # Sentiment Analysis
 
 A simple sentiment analysis web project combining a Python backend and a frontend built with HTML/CSS. This repository contains code and assets for running a sentiment classifier and a small web UI to interact with it.
@@ -81,4 +80,3 @@ Specify your license here (for example, MIT). If there is a LICENSE file in the 
 ## Contact
 
 For questions or help, open an issue or contact the repository owner: @Nikhil383
-```
