@@ -73,10 +73,6 @@ Contributions are welcome. Suggested steps:
 3. Make changes and add tests if applicable
 4. Open a pull request describing your changes
 
-## License
-
-Specify your license here (for example, MIT). If there is a LICENSE file in the repository, use that license text.
-
 ## Contact
 
 For questions or help, open an issue or contact the repository owner: @Nikhil383
