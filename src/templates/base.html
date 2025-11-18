@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sentiment — Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sentiment Analysis (Roberta) — Demo</h1>
+      </header>
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer>
+        <small>Model: cardiffnlp/twitter-roberta-base-sentiment</small>
+      </footer>
+    </div>
+  </body>
+</html>
+
