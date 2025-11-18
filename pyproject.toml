@@ -22,3 +22,6 @@ dependencies = [
 members = [
     "to_add_uv",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            padding: 30px;
+        }
+        .box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        .positive { color: green; font-size: 22px; }
+        .neutral  { color: orange; font-size: 22px; }
+        .negative { color: red; font-size: 22px; }
+        a { text-decoration: none; color: #0077ff; }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <h2>Prediction Result</h2>
+
+    <p><strong>Input Text:</strong></p>
+    <p>{{ text }}</p>
+
+    <p><strong>Sentiment:</strong></p>
+
+{% if score >= 0.70 %}
+    <p class="positive">😊 POSITIVE ({{ score }})</p>
+
+{% elif score >= 0.40 %}
+    <p class="neutral">😐 NEUTRAL ({{ score }})</p>
+
+{% else %}
+    <p class="negative">😞 NEGATIVE ({{ score }})</p>
+
+{% endif %}
+
+
+    <br>
+    <a href="/">Analyze another</a>
+</div>
+</body>
+</html>
