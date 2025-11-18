@@ -12,42 +12,6 @@ This project solves the problem of deploying a real-time sentiment analysis mode
 
 - Basic MLOps practices like metrics, CI tests, and modular code
 
-## Project structure
-
-sentiment-analysis/
-│
-├── app/
-│   ├── app.py                  # Flask application (API + UI)
-│   ├── model_utils.py          # Hugging Face model loading & prediction utils
-│   └── templates/
-│        ├── index.html         # User input page
-│        └── result.html        # Result display page (Positive/Neutral/Negative)
-│
-├── src/
-│   ├── __init__.py
-│   ├── data_prep.py            # Sample dataset & train-test split
-│   ├── save_hf.py              # Downloads & caches Hugging Face model
-│   ├── train.py                # Placeholder for training / MLflow integration
-│   └── eval.py                 # Evaluate model locally
-│
-├── tests/
-│   └── test_model.py           # Unit tests for model loading & prediction
-│
-├── models/
-│   └── hf_model/               # Cached Hugging Face model (created after save_hf.py)
-│
-├── .github/
-│   └── workflows/
-│        └── ci.yml             # GitHub Actions CI pipeline
-│
-├── pyproject.toml              # uv project environment + dependencies
-├── Dockerfile                  # Docker container definition
-├── docker-compose.yml          # Local container setup
-├── Makefile                    # Useful commands (run, cache model, test)
-├── pytest.ini                  # pytest configuration (import path setup)
-└── README.md                   # Project documentation
-
-
 ## Tech Stack
 
 Languages & Frameworks
