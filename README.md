@@ -1,68 +1,137 @@
 # Sentiment Analysis
 
-A simple sentiment analysis web project combining a Python backend and a frontend built with HTML/CSS. This repository contains code and assets for running a sentiment classifier and a small web UI to interact with it.
+## Problem Statement
+Classifying text as Positive, Neutral, or Negative is essential for applications like customer reviews, feedback analysis, and social media monitoring.
+This project solves the problem of deploying a real-time sentiment analysis model with:
+
+- A simple UI where users can enter text
+
+- A REST API for programmatic predictions
+
+- A Dockerized & reproducible environment
+
+- Basic MLOps practices like metrics, CI tests, and modular code
 
 ## Project structure
 
-- backend/ - Python code for training and running the sentiment analysis model
-- frontend/ - HTML/CSS assets and static files for the web UI
-- data/ - (optional) example datasets used for training/evaluation
-- models/ - (optional) trained model files
-- README.md - this file
+sentiment-mlops/
+│
+├── app/                # Flask backend + UI
+├── src/                # Scripts for HF model, training, evaluation
+├── tests/              # Unit tests (pytest)
+├── models/             # Downloaded HF model stored locally
+├── .github/workflows   # CI pipeline
+├── Dockerfile
+├── docker-compose.yml
+├── pyproject.toml
+├── Makefile
+└── README.md
 
-## Features
+## Tech Stack
 
-- Train or load a sentiment analysis model (Python)
-- Simple web interface to submit text and view sentiment predictions
-- Minimal, easy-to-run example for experimentation and learning
+Languages & Frameworks
 
-## Requirements
+- Python
 
-Typical packages (adjust to match the repository's actual files):
-- Python 3.8+
-- scikit-learn
-- pandas
-- Flask or FastAPI (for the backend server)
-- nltk (or other NLP libraries if used)
+- Flask
 
-If the repository includes a requirements.txt, install from it.
+- HTML / Jinja2 templates
 
-## Installation
+Machine Learning
+
+- Hugging Face Transformers (DistilBERT)
+
+- PyTorch
+
+MLOps & DevOps
+
+- Docker
+
+- uv (Python package & environment manager)
+
+- GitHub Actions (CI)
+
+- Prometheus (metrics endpoint)
+
+- pytest (unit tests)
+  
+Other Tools
+
+- Gunicorn (production WSGI server)
+
+- pyproject.toml for reproducible environments
+
+## Live Demo
+
+A live demo of the deployed app will be available soon.
+
+## TO run locally
 
 1. Clone the repository:
 
    git clone https://github.com/Nikhil383/sentiment-analysis.git
    cd sentiment-analysis
 
-2. Create a virtual environment and install dependencies:
+2. Install dependencies using uv:
 
-   python3 -m venv venv
-   source venv/bin/activate   # macOS / Linux
-   venv\Scripts\activate      # Windows
-
-   pip install -r requirements.txt
+   uv sync
 
 If there is no requirements.txt, install the likely packages listed above with pip.
 
-## Usage
+3. Download the pre-trained Hugging Face model:
 
-- To run the backend server (example using Flask):
+   uv run src/save_hf.py
 
-  python backend/app.py
+4. Run the Flask app:
+  Development mode:
+    uv run app/app.py
+  Production mode:
+    gunicorn -w 4 -b 0.0.0.0:8000 app.app:app
+5. Open your browser and go to http://localhost:5000 (or http://localhost:8000 for production mode).
 
-- Open frontend/index.html in a browser or visit http://localhost:5000 (if the backend serves the frontend).
+6.Test the API
+   curl -X POST http://localhost:5000/predict \
+    -H "Content-Type: application/json" \
+     -d '{"text": "I love this project!"}'
 
-- To train a model (if scripts are provided):
+## Key Learnings & Challenges
 
-  python backend/train.py --data data/sentences.csv --output models/sentiment_model.pkl
+What I Learned
 
-Adjust commands above to match the repository's actual script names and locations.
+- How to serve ML models using Flask and create clean REST APIs
 
-## Development notes
+- Dockerizing ML applications for consistent deployment
 
-- Ensure any dataset paths used in scripts match files in the data/ directory.
-- If using NLTK, you may need to download resources (e.g., punkt, stopwords) in setup or the first run.
-- Consider adding a simple Dockerfile for reproducible runs.
+- Managing Python environments reproducibly using uv + pyproject.toml
+
+- Integrating CI workflows to automate testing and environment checks
+
+- Creating modular ML inference pipelines
+
+- Adding monitoring using Prometheus metrics
+
+Challenges Faced
+
+- Handling Hugging Face model download time and ensuring deterministic builds
+
+- Adjusting Flask logic for version 3.x (removal of before_first_request)
+
+- Passing Python modules correctly for pytest (fixing import issues)  
+- Creating a clean UI + API experience for non-technical users
+
+- Ensuring model loads only once to avoid performance overhead
+
+## Improvements & Future Work
+
+- Add MLflow experiment tracking
+
+- Deploy to Render / Hugging Face Spaces
+
+- Add Kubernetes or Docker Swarm deployment
+
+- Add logging dashboard (Grafana)
+
+- Add fine-tuned custom sentiment model
 
 ## Contributing
 
