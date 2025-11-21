@@ -1,19 +1,25 @@
-name: CI
 
-on: [push, pull_request]
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  tests:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        run: pip install uv
+      - name: Build static site (copy templates)
+        run: |
+          mkdir -p site
+          cp -r app/templates/* site/
 
-      - name: Sync deps
-        run: uv sync
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
 
-      - name: Run tests
-        run: uv run pytest -q
